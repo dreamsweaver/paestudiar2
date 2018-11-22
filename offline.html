@@ -30,14 +30,13 @@
 <body class="free">
   <section class="w-section mobile-wrapper">
 
-    <div class="page-content" id="main-stack" data-scroll="0" data-splash="2000" data-redirect="free.html">
+    <div class="page-content" id="main-stack" data-scroll="0">
       <div class="w-nav navbar"></div>
       <div class="body padding">
         <div class="splash-logo"></div>
         <div class="bottom-section padding text-centered">
-          <h4>Bienvenido!</h4>
-          <p class="welcome-splash-text">Comienza a prepararte
-            <br>para la PAES en minutos.</p>
+          <h4>Ups! No tienes acceso a internet</h4>
+          <p class="welcome-splash-text">Comprueba que tu conexion a internet este encendida.</p>
           <div class="separator-big"></div>
           <div class="link-upper">CARGANDO...</div>
           <div class="separator-bottom"></div>
@@ -51,7 +50,22 @@
     </div>
   </section>
   <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/init-mobile.js"></script>
+  <script src="js/jquery.mobile-1.4.5.min.js"></script>
   <script type="text/javascript" src="js/framework.js"></script>
   <!--[if lte IE 9]><script src="js/placeholders.min.js"></script><![endif]-->
+  <script type="text/javascript">
+	  var connectionStatus = false;
+
+	$(document).on('pagebeforeshow', 'body', function () {
+		setInterval(function () {
+			connectionStatus = navigator.onLine ? 'online' : 'offline';
+			
+			if( connectionStatus == 'online' ){
+				window.location.href = 'groups.html'
+			}
+		}, 1000);
+	});
+  </script>
 </body>
 </html>
