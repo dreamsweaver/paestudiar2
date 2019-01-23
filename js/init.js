@@ -538,6 +538,13 @@ $(document).ready(function(){
 				$('#freepaes').html(html);
 
 				loading_ajax({estado:false});
+			},
+			timeout:30000,
+			error: function(){
+				loading_ajax({estado:false});
+				alert('No hay respuesta del servidor, verifica la conexion a internet y si el problema persiste notifica a PAEStudiar');
+				//navigator.notification.beep(2);
+				//navigator.notification.vibrate(2);
 			}
 		});
 	}
@@ -671,10 +678,10 @@ $(document).ready(function(){
 				}
 				loading_ajax({estado:false});
 			},
-			timeout:10000,
+			timeout:30000,
 			error: function(){
 				loading_ajax({estado:false});
-				//navigator.notification.alert('No hay respuesta del servidor, si haces click en aceptar se volverá a intentar cargar los datos', function(){ window.location.reload() }, 'Servidor no responde','Aceptar');
+				alert('No hay respuesta del servidor, verifica la conexion a internet y si el problema persiste notifica a PAEStudiar');
 				//navigator.notification.beep(2);
 				//navigator.notification.vibrate(2);
 			}
@@ -907,10 +914,10 @@ $(document).ready(function(){
 					});
 				}
 			},
-			timeout:10000,
+			timeout:30000,
 			error: function(){
 				loading_ajax({estado:false});
-				//navigator.notification.alert('No hay respuesta del servidor, si haces click en aceptar se volverá a intentar cargar los datos', function(){ window.location.reload() }, 'Servidor no responde','Aceptar');
+				alert('No hay respuesta del servidor, verifica la conexion a internet y si el problema persiste notifica a PAEStudiar');
 				//navigator.notification.beep(2);
 				//navigator.notification.vibrate(2);
 			}
@@ -964,10 +971,10 @@ $(document).ready(function(){
 				
 				loading_ajax({estado:false});
 			},
-			timeout:10000,
+			timeout:30000,
 			error: function(){
 				loading_ajax({estado:false});
-				//navigator.notification.alert('No hay respuesta del servidor, si haces click en aceptar se volverá a intentar cargar los datos', function(){ window.location.reload() }, 'Servidor no responde','Aceptar');
+				alert('No hay respuesta del servidor, verifica la conexion a internet y si el problema persiste notifica a PAEStudiar');
 				//navigator.notification.beep(2);
 				//navigator.notification.vibrate(2);
 			}
