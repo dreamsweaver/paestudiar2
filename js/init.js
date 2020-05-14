@@ -1,7 +1,7 @@
 'use strict';
 
 //var url_base = 'http://localhost/paestudiar_wp/';
-var url_base = 'http://app.paestudiar.siesa.net/';
+var url_base = 'http://paestudiar.laeliteweb.com/';
 var ajax_url = url_base+'wp-admin/admin-ajax.php';
 
 $(document).ready(function(){
@@ -543,6 +543,7 @@ $(document).ready(function(){
 			error: function(){
 				loading_ajax({estado:false});
 				alert('No hay respuesta del servidor, verifica la conexion a internet y si el problema persiste notifica a PAEStudiar');
+				//navigator.notification.alert('No hay respuesta del servidor, si haces click en aceptar se volverá a intentar cargar los datos', function(){ window.location.reload() }, 'Servidor no responde','Aceptar');
 				//navigator.notification.beep(2);
 				//navigator.notification.vibrate(2);
 			}
@@ -682,6 +683,7 @@ $(document).ready(function(){
 			error: function(){
 				loading_ajax({estado:false});
 				alert('No hay respuesta del servidor, verifica la conexion a internet y si el problema persiste notifica a PAEStudiar');
+				//navigator.notification.alert('No hay respuesta del servidor, si haces click en aceptar se volverá a intentar cargar los datos', function(){ window.location.reload() }, 'Servidor no responde','Aceptar');
 				//navigator.notification.beep(2);
 				//navigator.notification.vibrate(2);
 			}
@@ -917,7 +919,7 @@ $(document).ready(function(){
 			timeout:30000,
 			error: function(){
 				loading_ajax({estado:false});
-				alert('No hay respuesta del servidor, verifica la conexion a internet y si el problema persiste notifica a PAEStudiar');
+				alert('No hay respuesta del servidor, comprueba la conexión a internet, si el problema persiste contacta con PAEStudiar');
 				//navigator.notification.beep(2);
 				//navigator.notification.vibrate(2);
 			}
@@ -945,17 +947,17 @@ $(document).ready(function(){
 				
 				data.anios = data.anios.sort();
 				
-				for( var i = data.anios.length-1; i >= 0; i-- ){
+				//for( var i = data.anios.length-1; i >= 0; i-- ){
 					anios += '<li class="list-item" data-ix="list-item" style="opacity: 1; transform: translateX(0px) translateY(0px); transition: opacity 500ms cubic-bezier(0.23, 1, 0.32, 1), transform 500ms cubic-bezier(0.23, 1, 0.32, 1);">'+
 						'<a class="w-clearfix w-inline-block" href="#">'+
 						  '<div class="icon-list">'+
 							'<div class="icon ion-ios-checkmark-empty"></div>'+
 						  '</div>'+
-						  '<div class="title-list">'+data.anios[i]+'</div>'+
+						  '<div class="title-list">'+data.anios[0]+'</div>'+
 						'</a>'+
 					  '</li>';
 					$('#examinaranios').html(anios);
-				}
+				//}
 				
 				for( var f = 0; f < data.materias.length; f++ ){
 					materias += '<li class="list-item" data-ix="list-item" style="opacity: 1; transform: translateX(0px) translateY(0px); transition: opacity 500ms cubic-bezier(0.23, 1, 0.32, 1), transform 500ms cubic-bezier(0.23, 1, 0.32, 1);">'+
